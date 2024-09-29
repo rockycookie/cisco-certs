@@ -1,7 +1,7 @@
-PrimaryRouter#sh run
+PrimaryRouter#sh running-config 
 Building configuration...
 
-Current configuration : 686 bytes
+Current configuration : 792 bytes
 !
 version 12.4
 no service timestamps log datetime msec
@@ -12,6 +12,8 @@ hostname PrimaryRouter
 !
 !
 !
+enable secret 5 $1$mERr$GbpJzpzIDj5Z9M0guq9qN1
+!
 !
 !
 !
@@ -21,6 +23,8 @@ ip cef
 no ipv6 cef
 !
 !
+!
+username admin secret 5 $1$mERr$GbpJzpzIDj5Z9M0guq9qN1
 !
 !
 !
