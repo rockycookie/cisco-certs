@@ -14,4 +14,7 @@
 - Windows/Mac/Linux OS are constantly checking internet connection, thus there is almost always some ARP entry
 
 ## Extra note
+- Connection issues
+    - Duplex & Speed setting should be the same
+    - Vlan should be the same
 - I was using PacketTracer version 8.2.1.0118, where the host's IP-MAC mapping was not added to switch's ARP table while switch's MAC address table was updated. The turoial said it ARP table should also be updated~
