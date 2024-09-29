@@ -7,6 +7,7 @@
 
 ## MAC address table
 - LAN switch prepares to forward frames by learning MAC addresses by **examining the source MAC address of each frame received by the switch**
+- Multiple MAC addresses could be mapped to the same switch port, which usually means that port is connected to another switch (well or maybe opne host with multiple VMs)
 
 ## ARP table
 - It exists in **any device** that has IP address assigned to it
