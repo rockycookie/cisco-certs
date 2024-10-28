@@ -1,5 +1,9 @@
 # Access Control List
 
+## Notes
+- ACL needs to be added to VLAN interface for L3 switches; physical interfaces would NOT work!
+- `ospf` is also an ACL protocol, DONT `deny ip any any` without considering it!
+
 ## Types
 - Standard numbered ACLs (1–99)
 - Extended numbered ACLs (100–199)
