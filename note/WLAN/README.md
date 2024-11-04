@@ -33,3 +33,13 @@ See [802.11 std](./802.11-std.md)
     - e.g. many APs chained eventually conntected to one switch via one cable
 
 ## Radio Frequency
+- Band
+    - 2.4GHz
+        - many overlapping channels
+            - only 3 nonoverlapping channels are available
+        - reach further
+        - better penetration (walls)
+    - 5GHz
+        - no overlapping channel
+            - many more than 3
+        - less interference
