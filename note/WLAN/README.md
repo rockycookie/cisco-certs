@@ -20,3 +20,16 @@
 ## 802.11 std
 See [802.11 std](./802.11-std.md)
 
+## Other network topologies
+- repeater
+- WGB (workgroup bridge)
+    - For devices can only use ethernet cable, but need wireless connection
+- outdoor bridge
+    - An AP can be configured to act as a bridge to form a single wireless link from one LAN to another over a long distance
+    - commonly used for connectivity between buildings or between cities
+    - A point-to-multipoint bridged link allows a central site to be bridged to several other sites.
+- mesh network
+    - In a mesh topology, wireless traffic is bridged from AP to AP, in a daisy-chain fashion, using another wireless channel.
+    - e.g. many APs chained eventually conntected to one switch via one cable
+
+## Radio Frequency
