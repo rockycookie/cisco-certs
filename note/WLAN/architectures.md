@@ -38,13 +38,13 @@
             - Every AP and WLC must also authenticate each other with digital certificates (pre-installed)
         - once CAPWAP tunnels are built from a WLC to APs, the WLC can begin offering a variety of additional functions (...)
 - Deployments
-    - unified or centralized WLC deployment --> core-layer switch (top-most)
+    - Unified or centralized WLC deployment --> core-layer switch (top-most)
         - physical
         - typically supports up to 6,000 APs per WLC
-    - cloud-based WLC deployment
+    - Cloud-based WLC deployment
         - usually virtual machine
         - typically supports up to 3000 APs per WLC
-    - embedded WLC deployment --> access-layer switch (bottom)
+    - Embedded WLC deployment --> access-layer switch (bottom)
         - small campuses or distributed branch locations (small number of APs needed)
         - WLC can be co-located with a stack of switches
         - typically supports up to 200 APs per embedded WLC
