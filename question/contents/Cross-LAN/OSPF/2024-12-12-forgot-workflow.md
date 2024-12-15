@@ -1,6 +1,6 @@
 ### Which answers correctly describe the function and use of OSPF database description (DD) messages?
-- [ ] To exchange lists identifying known LSAs.
-- [x] To exchange detailed contents of known LSAs.
+- [x] To exchange lists identifying known LSAs.
+- [ ] To exchange detailed contents of known LSAs.
 - [ ] To exchange counts of known LSAs by type.
 - [x] Used after forming a neighbor relationship but before any Link State Update (LSU) messages.
 - [ ] Used after forming any neighbor relationships and after any Link State Update (LSU) messages.
