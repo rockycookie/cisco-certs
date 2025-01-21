@@ -1,5 +1,22 @@
 # Why RSTP Rapid
 
+## Why faster
+- Shorter timer
+    - RSTP defining MaxAge as 3 times the Hello timer (STP 10 times)
+- Ask instead of waitting for timeout
+    - With STP Listening state, the switches all tell each other (with BPDU messages) that the topology has changed and to **time out any MAC table entries** using the forward delay timer
+    - RSTP switches tell each other (using messages) that the topology has changed, which makes
+        - direct neighboring switches to **flush their MAC tables** to remove all the potentially loop-causing entries, without a wait
+- Quickly repleace RP:
+    - When
+        - the root port fails
+        - or Hellos stop arriving on the root port
+    - no wait for timer, ports’ role and state:
+        - root port ==> disabled port && forwarding ==> discarding
+        - alt port ==> root port && forwarding
+- Quickly replace DP:
+    - With a backup port, if the current DP fails, the switch can start using the backup port immediately
+
 ## Terminologies
 
 #### Alternate Port
@@ -7,7 +24,7 @@
 - to be an alternate port, both the RP and the alternate port must receive Hellos that identify the same root switch.
 
 #### Backup Port
-- local switch becomes designated port
+- switch-local backup port becomes designated port
 - used mostly for hub LAN segments, not used much now
 
 
@@ -16,10 +33,6 @@
 - RSTP adds a new mechanism to replace a designated port, without any waiting to reach a forwarding state (in some conditions).
 - RSTP lowers waiting times for cases in which RSTP must wait for a timer.
 
-
-RSTP defining MaxAge as 3 times the Hello timer (STP 10 times). 
-Additionally, RSTP can send messages to the neighboring switch to inquire whether a problem has occurred.
-
 ### STP diff
-- STP, the root switch creates a Hello with all other switches, updating and forwarding the Hello
-- RSTP, each switch independently generates its own Hellos.
+- STP, the root switch creates a Hello, with all other switches updating and forwarding the Hello
+- RSTP, each switch independently generates its own Hello
