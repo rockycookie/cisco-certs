@@ -6,6 +6,8 @@ On Cisco routers, IPv4 routing is enabled by default, but IPv6 routing is not en
 (config terminal)# ipv6 unicast-routing
 ```
 - without this, router does not route IPv6 traffic
+    - some links, particularly WAN links, do not need a global unicast address
+    - use the `ipv6 enable` command, enabling IPv6 and giving each interface a generated link-local IPv6 address
 
 ## Address for interface
 ```
