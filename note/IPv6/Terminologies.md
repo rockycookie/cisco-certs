@@ -6,30 +6,32 @@
 
 ## Unicast
 ### Global unicast
-- First Hex Digits: 2 or 3 (originally); all not otherwise reserved (today)
+- First Hex Digits: `2` or `3` (originally); all not otherwise reserved (today)
 
 ### Unique local unicast
-- 8b: First 2 Hex Digits: FD
+- 8b: First 2 Hex Digits: `FD`
 - 40b: unique 40-bit global ID (Pseudo-Random, unique so that company/network merges get less collision)
 - 16b: subnet
 - 64b: interface ID
 
 ### Link local unicast
-- First Hex Digits: FE80
+- First Hex Digits: `FE80`
 
 ## Multicast
 
-- First Hex Digits: FF
+- First Hex Digits: `FF`
 - IP ranges
     - IANA defines the range `FF30::/12` (all IPv6 addresses that begin with FF3) as the range of addresses to be used for some types of multicast applications
     - Additionally, different IPv6 RFCs reserve multicast addresses for specific purposes `FF02::/`
     - Multicasr scopes:
-        - Interface-Local: FF01
+        - Interface-Local: `FF01`
             - Packet remains within the device. Useful for internally sending packets to services running on that same host.
-        - Link-Local: FF02
-        - Site-Local: FF05
-        - Organization-Local: FF08
-        - Global: FF0E
+        - Link-Local: `FF02`
+            - Solicited-node multicast
+                - `FF02::1:FF_ _ : _ _ _ _` with /104, or `FF02:0000:0000:0000:0000:0001:FF_ _: _ _ _ _`
+        - Site-Local: `FF05`
+        - Organization-Local: `FF08`
+        - Global: `FF0E`
 
 | Short name       | Multicast Address | Meaning                                      | IPv4 equivalent |
 |------------------|-------------------|----------------------------------------------|-----------------|
@@ -46,3 +48,16 @@
 2. RIRs (Regional Internet Registries): AfriNIC, APNIC, ARIN, LACNIC, RIPE NCC
 3. ISPs
 4. Companies
+
+## Other IPv6 addresses
+- unknown/unspecified: `::`
+    - A host can use the unknown address (::) when its own IPv6 address is not yet known or when the host wonders if its own IPv6 address might have problems
+- loopback: `::1`
+    - to test its own protocol stack
+- anycast
+    - why
+        - multiple routers to use the same IPv6 address
+        - route to the nearest router for the anycsat
+    - how
+        - `Router(config-if)# ipv6 address {address}/{prefix} anycast`
+        - the address value can be chosen like any other IPv6 unicast addresses
