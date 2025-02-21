@@ -1,4 +1,4 @@
-# Galss Fibers
+# Glass Fibers
 To transmit between two devices, you need two cables, one for each direction.
 
 ## Components of a Fiber-Optic Cable
