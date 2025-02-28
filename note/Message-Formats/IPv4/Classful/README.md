@@ -1,7 +1,7 @@
 # Classful IPv4
 
 ## Class A - large network unicast
-### [b0000 0000 to b1000 0000) ---> [0,128) + 128 excluding 0 and 127
+### [b0000 0000 to b1000 0000) ---> [0,128) + 127 excluding 0 and 127
 - First octet range 1-126
     - 0 and 127 are reserved
 - Valid network numbers:
@@ -22,7 +22,7 @@
 - Default mask: 255.0.0.0
 
 ## Class B - medium-sized network unicast
-### [b1000 0000 to 1100 0000) ---> [128 - 191) + 64
+### [b1000 0000 to 1100 0000) ---> [128 - 192) + 61
 - First octet range 128-191
 - Valid network numbers:
     <details>
@@ -51,7 +51,7 @@
 - Default mask: 255.255.0.0
 
 ## Class C - small network unicast
-### [b1100 0000 to b1110 0000) ---> [192, 224) + 32
+### [b1100 0000 to b1110 0000) ---> [192, 224) + 31
 - First octect range 192 - 223
 - Valid network numbers:
     <details>
@@ -80,3 +80,9 @@
 - Bits in network part: 24
 - Bits in host part: 8
 - Default mask: 255.255.255.0
+
+## Class D - multicasting
+### [b1110 0000 to b1111 0000) ---> [224, 240) + 15
+
+## Class E - research purpose
+### [b1111 0000 to b1111 1111] ---> [240, 240] + 15
