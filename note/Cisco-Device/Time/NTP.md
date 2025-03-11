@@ -8,6 +8,20 @@ R1(config)# clock summer-time EDT recurring
 ```
 
 ## Network Time Protocol
+- stratum level
+    - a number to show the accuracy of their reference clock data
+    - 1 to 15, default 8
+    - the lower, the more accurate
+    - each client adds 1 to the stratum value learned from its server
+
+### Show
+```
+R1# show ntp associations
+! This output is taken from router R1, acting in client/server mode
+    address     ref clock   st  when    poll    reach   delay   offset  disp
+*~172.16.2.2    172.16.3.3  3   50      64      377     1.223   0.090   4.469
+    * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured
+```
 
 ### NTP Server Mode
 ```
