@@ -1,0 +1,13 @@
+# Attacks
+- In a **reflection attack**, the attacker sends packets with a spoofed source address toward a live host, but the host is not the intended target. The attacker’s goal is to get the host in question to send traffic to the spoofed address that is the actual target.
+- **Amplification attack**, a reflection attack that can leverage an application or device to increase the amount of traffic being sent toward a target, even when the attacker is originally sending a small amount of data.
+- **man-in-the-middle attack**, the attacker can relay/mofiy requests and responses back and forth to its own goals.
+- **Denial-of-Service (DoS) attack** the goal is to reduce a system, service, application, device, or resource to the point that it can no longer function.
+- **Social engineering** is an attack that exploits human trust and social behavior.
+- **Phishing** is a malicious invitation disguised as something legitimate.
+    - Spear phishing targets one or more specific individuals for a phishing attack.
+    - Whaling is an attack that targets a high-profile individual, such as a CEO or CIO of a company.
+    - Vishing is an attack that uses voice calls.
+    - Smishing is an attack that uses text (SMS) messages.
+    - Pharming uses legitimate services to send users to a compromised site.
+    - A watering hole identifies users and then attracts them to a compromised site.
