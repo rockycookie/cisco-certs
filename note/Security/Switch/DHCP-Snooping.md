@@ -1,5 +1,5 @@
 # DHCP Snooping
-To prevent fake DHCP server and more
+To prevent fake DHCP server and maliciously-IP-releasing
 
 ## How the switch does it?
 
@@ -21,3 +21,13 @@ To prevent fake DHCP server and more
 6. error recovery, global command
     - `errdisable recovery cause dhcp-rate-limit`
     - `errdisable recovery interval <seconds>`
+
+## DHCP Snooping Binding Database/Table
+```
+switch(config)# show ip dhcp snooping binding
+MacAddress          IpAddress       Lease(sec)  Type            VLAN    Interface
+-----------------   -------------   ----------  -------------   ----    --------------------
+02:00:11:11:11:11   172.16.2.101    86110       dhcp-snooping   11      GigabitEthernet1/0/3
+02:00:22:22:22:22   172.16.2.102    86399       dhcp-snooping   11      GigabitEthernet1/0/4
+Total number of bindings: 2
+```
