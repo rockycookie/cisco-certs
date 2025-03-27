@@ -13,8 +13,11 @@
 - The devices inside the MPLS network then use the label field inside that MPLS header when forwarding data across the MPLS network
 
 ## Convention
-- Customer edge router learn route with provider edge router using OSPF
-- Provide edge router learn route with provider edge router using MP-BGP
+- CE router learn routes with PE router using OSPF or others
+    - CE would always have only one OSPF neighbor
+- PE router learn routes with PE router using MP-BGP only
+    - Number{IP subnets} in the WAN >= the number{remote sites}
+- CE (Customer Edge), PE (Provider Edge)
 
 ## MPLS and QoS
 - MPLS VPN supports VoIP with QoS

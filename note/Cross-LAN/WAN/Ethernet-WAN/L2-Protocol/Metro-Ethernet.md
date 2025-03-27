@@ -10,7 +10,7 @@
     - It allows the two customer devices to send Ethernet frames to each other
     - When using routers/L3-switches, each point-to-point link has its own subnet/VLAN
 - Ethernet LAN Service
-    - Virtual Private LAN Service (VPWS) --- E-LAN service --- full-mesh
+    - Virtual Private LAN Service (VPLS) --- E-LAN service --- full-mesh
         - needs `N*(N – 1) / 2` links
     - When using routers/L3-switches, all links in the same subnet/VLAN
 - Ethernet Tree Service
