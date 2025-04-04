@@ -33,8 +33,7 @@ The management plane includes protocols that allow network engineers to manage t
     - it allows the controller to program the data plane forwarding tables of the networking device
     - e.g. OpenFlow, OpFlex, SSH+SNMP+?
 - **NBI (Northbound Interface)**
-    - it allows the controller to gather information about the network
-        - e.g. list of devices, ports on them, links; IP, VLAN config, etc.
+    - it allows controller application to control the controller, using like Java API
 
 ### Controller App
 - it is a separate prgroam
