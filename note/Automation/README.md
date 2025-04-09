@@ -27,6 +27,38 @@ The management plane includes protocols that allow network engineers to manage t
 - each of the network devices still has a data plane
 - however, NONE of the network devices has a control plane (e.g. they do not populate their forwarding tables by routing procotols like OSPF)
 
+#### Overlay
+- VXLAN tunnels between SDA switches
+- to transport traffic from one fabric endpoint to another 
+
+#### Uderlay
+- The network of (multilayer) devices and connections
+- to support the dynamic discovery of all SDA devices and endpoints
+- to support VXLAN
+- Cisco
+    - All switches act as Layer 3 switches with IS-IS routing protocol
+    - SDA edge node acts as the default gateway for the endpoint devices
+    - No STP, HSRP needed
+    - Use ASIC on each switch for VXLAN --> no performance penalty
+    - VXLAN encapsulates the entire data link frame (L2) instead of only encapsulating the IP packet (L3)
+
+#### Fabric
+- combination of overlay and underlay
+- Fabric edge node: A switch that connects to endpoint devices
+    - The first SDA node to receive the frame encapsulates the frame in a new message using a tunneling specification (VXLAN) and forwards the frame into the fabric
+    - ingress node
+    - the frame is forwared within the fabric based on its VXLAN details
+    - The last SDA node removes the VXLAN details and send the original frame to the desitination endpoint
+- Fabric border node: A switch that connects to devices outside SDA’s control
+- Fabric control node: A switch that performs special control plane functions for the underlay (LISP)
+
+#### Fabric's control plane
+- Fabric edge node 
+    - creates Endpoint Identifier (EID) per {MAC addr, IP addr, subnet}
+- LISP map server
+    - stores mapping of node-to-EID
+    - the node in the mapping is also called matching Routing Locators (RLOCs)
+
 ### Communication bettwen them
 
 - **SBI (Southbound Interface)**
