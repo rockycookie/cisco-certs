@@ -1,6 +1,7 @@
 # High-Level Data Link Control
 - HDLC has less work to do than Ethernet because of the simple point-to-point topology of a
-leased line.
+leased line
+- Cisco devices default, Cisco devices only
 
 ## Fields
 - Flag
