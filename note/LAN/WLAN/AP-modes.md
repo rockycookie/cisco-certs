@@ -1,6 +1,11 @@
 # AP Modes
 
 ## Autonomous Mode
+### Method of configuration
+- WLSE (Wireless LAN Solution Engine)
+    - centralized coordination of autonomous APs
+- CLI
+- Web interface
 
 ## Lightweight Mode (LAP)
 
@@ -25,3 +30,9 @@
         - inference
     - discover rougue devices
     - find IDS (Intrusion Detection System) events
+
+### Method of configuration
+- WLC (Wireless LAN Controller)
+    - physical device
+- WCS (Wireless Control System)
+    - software
