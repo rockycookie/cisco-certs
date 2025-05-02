@@ -9,7 +9,14 @@ Routers add IP routes to their routing tables using three methods:
 1. Learn routing information about IP subnets from neighboring routers.
 2. Advertise routing information about IP subnets to neighboring routers.
 3. If more than one possible route exists to reach one subnet, pick the best route based
-on a metric.
+on a metric, how:
+    1. Find the route with the longest prefix lenght, if tie then
+    2. Admin distance, if tie then
+        - Connected: 0
+        - Static: 1
+        - IGRP: 100
+        - OSPF: 110
+    3. Cost
 4. If the network topology changes—for example, a link fails—react by advertising that some routes have failed and pick a new currently best route. (This process is called convergence.)
     - The ability to converge quickly, without causing loops, is one of the most important considerations when choosing which IP routing protocol to use
 
