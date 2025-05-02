@@ -1,4 +1,5 @@
 # Device Time
+- using port 123
 
 ## Configure Manually
 ```
