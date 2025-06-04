@@ -10,7 +10,7 @@
 - Additional ACL numbers (1300–1999 standard, 2000–2699 extended)
 - Named ACLs
 
-## Standard numbered IP ACL
+## Standard numbered IP ACL (filter by source IP only)
 1. `conf t`
 2.  `access-list {1-99 | 1300-1999} [permit | deny] {source IP} (source-wildcard)`
     - OS refers to each line in an ACL as an Access Control Entry (ACE) --> ACL statement
