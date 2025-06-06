@@ -3,7 +3,7 @@
 ## Auto assignment
 Every IPv6 host interface (and router interface) can create its own link-local address automatically, solving some initialization problems for hosts before they learn a dynamically learned global unicast address.
 
-### Lik-local
+### Link-local
 Link-local addresses are used for:
 - some overhead protocols that stay local to one subnet
 - being the next-hop address for IPv6 routes.
