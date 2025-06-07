@@ -1,0 +1,22 @@
+# WiFi versions
+
+- 802.11b (WiFi 1)
+    - 3 non-overlapping channels
+    - 2.4 GHz
+    - max 11 Mbps
+- 802.11a (WiFi 2)
+    - 23 channels
+    - 5 GHz
+    - max 54 Mbps
+- 802.11ac (WiFi 5)
+    - 23+ channels
+    - 5 GHz
+    - max 6.9 Gbps
+- 802.11ax (WiFi 6)
+    - 23+ channels
+    - both 2.4 and 5 GHz
+    - max 9.6 Gbps
+- 802.11be (WiFi 7)
+    - 23+ channels even more
+    - 2.4, 5 or 6 GHz
+    - max 23 Gbps
