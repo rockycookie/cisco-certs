@@ -19,7 +19,7 @@ Group  Port-channel  Protocol    Ports
 1      Po1(SU)       -           Fa0/14(P) Fa0/15(P)
 ```
 
-### When adding port to gourp
+### When adding port to group
 The new physical interface’s settings must be the same as the existing ports’ settings;
 otherwise physical interface remains configured as part of the PortChannel,
 but it is not used as part of the channel, often being placed into some nonworking state.
@@ -67,13 +67,13 @@ Would select Gi1/0/22 of Po1
 3. channel-group {num} mode on
     - `num` could be different in different switches
 
-### Layer 2, dynamic LACP
+### Layer 2, dynamic LACP (open industry-std)
 1. conf t
 2. int {int name}
 3. channel-group {num} mode {**active** | **passive**}
     - `num` could be different in different switches
 
-### Layer 2, dynamic PAgP
+### Layer 2, dynamic PAgP (Cisco-proprietary)
 1. conf t
 2. int {int name}
 3. channel-group {num} mode {**desirable** | **auto**}
