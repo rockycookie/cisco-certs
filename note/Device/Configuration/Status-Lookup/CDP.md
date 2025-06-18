@@ -11,7 +11,7 @@
 - CDP send timer (the frequency at which CDP sends messages)
 
 ### `cdp holdtime /seconds/`
-- timer to remove CFD info
+- timer to remove CFP info
 
 ## Show
 ### `show cdp`
