@@ -2,4 +2,8 @@
 
 - DTE: ternimal
 - DCE: circuit, connecting terminals
-- need `clock rate` on DCT for a connection between the two to work
+
+## Clock Rate
+- DCE devices provide timing/clocking signals
+    - which determines the speed of the serial communication
+- DTE devices synchronize to them
