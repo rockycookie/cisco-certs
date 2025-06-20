@@ -1,6 +1,6 @@
 ## Bridge
 
-### A bridge segmentsthe LAN into separate collision domains
+### A bridge segments the LAN into separate collision domains
 Note, a bridge usually connects two LAN segments, but could connect more. <br/>
 The following topology has 5 collision domains, same as switches.
 
