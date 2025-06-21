@@ -30,6 +30,10 @@ ntp master {stratum-level}
 ```
 - The device acts only as an NTP server, never client
 - The device gets its time information from the internal clock on itself
+- stratum level
+    - 0: most accurate
+    - 7: default
+    - 15: least accurate, 15 hops away from the source of truth
 
 ### NTP Client/Server Mode
 ```
