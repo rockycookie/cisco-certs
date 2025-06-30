@@ -9,12 +9,19 @@ Link-local addresses are used for:
 - being the next-hop address for IPv6 routes.
 
 #### How
-1. Link-local address should always start with `FE80::/64`
+1. Link-local address should always start with `FE80::/10`
+    - `FE80::/10` is the "link-local prefix"
+    - but link-local addresses has `FE80::/64` as well (the remaining 54 bits in the first 64-bit are all zeros)
 2. The second half of the link-local address, in practice, can be formed
     - using EUI-64 rules (IOS default)
     - be randomly generated (Microsoft OS)
     - be manually configured
         - `ipv6 address {address} link-local` where address must be within range
+
+#### Override auto-generated link-local address
+```
+R1(config-if)# ipv6 address <ipv6_address> link-local
+```
 
 <br/>
 
@@ -22,16 +29,41 @@ Link-local addresses are used for:
 
 ### 128b IP assignment
 
+Just configure all
+
+1. Enable IPv6 Routing
+    ```
+    R1> enable
+    R1# configure terminal
+    R1(config)# ipv6 unicast-routing
+    ```
+2. Assign addr to interface
+    ```
+    R1(config)# interface GigabitEthernet0/0
+    R1(config-if)# ipv6 address 2001:db8:1::1
+    R1(config-if)# no shutdown
+    ```
+
 ### 64b IP assignment: EUI-64
 (extended unique identifier) <br/>
 The IPv6 address is {64-bit subnet prefix} appending {64-bit interface ID}
 
-#### Subnet prefix
-Configured
+1. Enable IPv6 Routing
+    ```
+    R1> enable
+    R1# configure terminal
+    R1(config)# ipv6 unicast-routing
+    ```
+2. Assign addr to interface
+    ```
+    R1(config)# interface GigabitEthernet0/0
+    R1(config-if)# ipv6 address 2001:db8:1::/64 eui-64
+    R1(config-if)# no shutdown
+    ```
 
-#### To get interface ID
+#### To get interface ID: EUI-64
 1. Split 48-bit MAC address in 2 halves
-2. Insert FFFE (16-bit) in between, so that total it is 64obit
+2. Insert FFFE (16-bit) in between, so that total it is 64 bit
 3. Invert the 7th bit of the interface ID
 
 Note, for interfaces that do not have a MAC address, like serial interfaces, the router uses the MAC of the lowest-numbered router interface that does have a MAC.
@@ -53,5 +85,17 @@ Note, for interfaces that do not have a MAC address, like serial interfaces, the
 (config-if)# ipv6 address autoconfig
 ```
 
-- Dynamic learning of the prefix and prefix length
-- Calculate the interface ID using EUI-64 rules
+#### Steps
+1. Connect to the network
+2. Router Solicitation (RS)
+    - device sends out RS to all-routers multicast address (`FF02::2`)
+3. Router Advertisement (RA)
+    - routers in the network that receive the RS message respond with RA, with info:
+        - prefix
+        - router address
+4. Generate address
+    - device combines the prefix with its own interface ID (often using EUI-64 format) to form a globally unique IPv6 address
+5. Neighbor Solicitation (NS)
+    - device sends NS and expects **NO ONE** replies the NS (with a Neighbor Advertisement, NA)
+    - the process is called Duplicate Address Detection (DAD)
+6. Device starts using the address
