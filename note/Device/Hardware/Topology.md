@@ -1,4 +1,9 @@
 # Device Topology
+
+## 2-tier Topology
+- Also named as "collapsed core"
+- it combines distribution and core layer functions
+
 ## 3-tier Topology
 
 - Core (backbone) layer
