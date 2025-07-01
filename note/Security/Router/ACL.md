@@ -3,6 +3,10 @@
 ## Notes
 - ACL needs to be added to VLAN interface for L3 switches; physical interfaces would NOT work!
 - `ospf` is also an IP protocol, DONT `deny ip any any` without considering it!
+- what happens when router/l3switch handles packet
+    1. inbound ACLs filter packets
+    2. lookup routing table and make forwarding decisions
+    3. outbound ACLs filter packets
 
 ## Types
 - Standard numbered ACLs (1–99)
