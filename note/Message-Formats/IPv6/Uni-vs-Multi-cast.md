@@ -9,10 +9,14 @@
 - First Hex Digits: `2` or `3` (originally); all not otherwise reserved (today)
 
 ### Unique local unicast
-- 8b: First 2 Hex Digits: `FD`
-- 40b: unique 40-bit global ID (Pseudo-Random, unique so that company/network merges get less collision)
-- 16b: subnet
-- 64b: interface ID
+- also named "site-local"
+- address format:
+    - 8b
+        - formal prefix `FC00::/7`
+        - most commly used `FD00::/8`
+    - 40b: unique 40-bit global ID (Pseudo-Random, unique so that company/network merges get less collision)
+    - 16b: subnet
+    - 64b: interface ID
 
 ### Link local unicast
 - First Hex Digits: `FE80`
