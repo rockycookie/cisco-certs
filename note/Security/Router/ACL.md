@@ -7,6 +7,7 @@
     1. inbound ACLs filter packets
     2. lookup routing table and make forwarding decisions
     3. outbound ACLs filter packets
+- port numbers can only be specified with TCP or UDP protocols in access control lists
 
 ## Types
 - Standard numbered ACLs (1–99)
