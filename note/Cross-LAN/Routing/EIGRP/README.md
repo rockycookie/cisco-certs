@@ -1,0 +1,15 @@
+# EIGRP
+- runs over IP using protocol number 88
+- originally Cisco proprietary but became an open standard (RFC 7868) that can be implemented by any vendor
+- support for unequal-cost load balancing
+    - the variance command, allowing traffic to be distributed across multiple paths with different metrics
+        - better vs to protocols that only support equal-cost load balancing
+- use Reliable Transport Protocol (RTP)
+    - ensure reliable delivery of routing updates to neighbors
+        - with acknowledgment and retransmission
+- use the Diffusing Update Algorithm (DUAL) for route computation
+    - loop-free operation and rapid convergence
+- use its own packet types for topology information sharing
+    - Update, Query, and Reply packets for routing information exchange
+    - different from Link-State Advertisements (LSAs)
+- form neighbor relationships through a simple two-way Hello packet process
