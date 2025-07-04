@@ -1,6 +1,6 @@
 # Configuration Examples
 
-Not taking from the OSPF section of
+Note taking from the OSPF section of
 - https://www.cisco.com/c/en/us/tech/ip/ip-routing/tech-configuration-examples-list.html
 
 ## Quick notes
