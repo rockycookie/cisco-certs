@@ -1,21 +1,25 @@
 # QoS Marking
-## Classification
-- the process of matching the fields in a message so that the device can take some QoS action later
+## How to mark
+- Classification -- the process of matching the fields in a message so that the device can take some QoS action later
 
 ### Using ACL
+- Class-Based Marking with access lists is used to apply QoS markings (such as DSCP values) to traffic that has already been classified by other mechanisms
+- It does NOT perform the initial traffic classification or deep packet inspection itself
 
 ### Using NBAR
-Differentiating applications (like Amazon entertainment video from Cisco IP camera)
+- Differentiating applications (like Amazon entertainment video from Cisco IP camera)
+- Deep packet inspection to recognize applications based on payload patterns
+    - more precise
 
 ## Where to mark
 ### IP header
 - Marking a QoS field in the IP header works well with QoS because the IP header exists for the **entire trip** from the source host to the destination host
 - Within 1 byte IPv4 headers - ToS (Type of Service)
-    - old 3-bit IPP
+    - old 3-bit IPP (IP Precedence)
     - new 6-bit **DSCP (Differentiated Services Code Point)**
 
 ### VLAN trunk, Ethernet header
-- Within third byte of the 4-byte 802.1Q header, as a 3-bit field
+- Within the third byte of the 4-byte 802.1Q header, as a 3-bit field
     - named **CoS (Class of service)** and PCP (Priority Code Point)
 
 ### Others
