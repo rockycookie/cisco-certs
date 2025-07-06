@@ -10,6 +10,7 @@ Router(config)# ip dhcp excluded-address 172.16.1.100 172.16.1.103
 
 ## Method 2
 ```
+Router(config)# ip dhcp excluded-address 172.16.1.100 172.16.1.103
 Router(config)# ip dhcp pool 1
 Router(dhcp-config)# network 172.16.0.0 /16
 Router(dhcp-config)# domain-name cisco.com
