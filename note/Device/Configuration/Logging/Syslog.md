@@ -4,20 +4,31 @@
 ## Facilities
 ### See logs from console
 - By default, IOS shows log messages to console users for all severity levels of messages
-- `logging console` global config (default)
+- To enable
+    - `logging console` global config (default)
 - To set log level:
     - `logging console {level-name | level-number}`
 
 ### See logs from SSH/Telnet
-- two-step process
+- To enable
     1. from target device, `logging monitor` global config
-    2. from terminal, `terminal monitor EXEC` during login session
+    2. from terminal
+        - `terminal monitor` to start logging
+        - `terminal no monitor` to stop logging
 - To set log level:
     - `logging monitor {level-name | level-number}`
 
 ### See logs from RAM
-- `logging buffered` global config
-- later login users can see old logs by `show logging EXEC`
+- To enable
+    - `logging buffered` global config
+    - later login users can see old logs by `show logging buffered`
+- To set log level:
+    - `logging buffered {level-name | level-numbe}`
+
+### See logs from Flash
+- To enable 
+    - `logging file` global config
+    - later login users can see old logs by `show logging file`
 - To set log level:
     - `logging buffered {level-name | level-numbe}`
 
