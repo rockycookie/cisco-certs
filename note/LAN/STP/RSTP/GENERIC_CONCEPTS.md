@@ -7,6 +7,8 @@
 - the system ID is based on a universal (burned-in) MAC address in each switch
 - lowest numeric BID --> root switch
     1. priority matters most
+        - default 32768
+        - every 4096 within range 0 to 65535
     2. system ID (MAC)
 
 ### BDPU (Bridge Protocol Data Unit)
