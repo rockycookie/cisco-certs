@@ -21,5 +21,4 @@
     - regularly
 - rate by number of hops
 - convergence slow
-- 
 - example: RIP

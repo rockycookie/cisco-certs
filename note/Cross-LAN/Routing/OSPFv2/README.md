@@ -44,6 +44,7 @@
 Routers that both
 - use OSPF
 - sit on the same data link
+- having the same Hello and Dead interval (note, EIGRP allow Hello interval mismtach)
 
 ### OSPF area
 - Same subnet same area
