@@ -30,7 +30,7 @@
     - `logging file` global config
     - later login users can see old logs by `show logging file`
 - To set log level:
-    - `logging buffered {level-name | level-numbe}`
+    - `logging file {level-name | level-numbe}`
 
 ### See logs from Syslog Server
 - RFC 5424: syslog protocol, a device uses UDP to send messages to a syslog server for storage
