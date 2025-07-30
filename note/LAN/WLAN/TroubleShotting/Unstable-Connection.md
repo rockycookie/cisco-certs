@@ -14,3 +14,7 @@ Symptoms:
 - **[Unique]** Different client devices experience the same issues in the same location
 - Signal strength decreases significantly a short distance from the AP
 - Multiple retransmissions seen in packet captures
+
+### What to do for 2.4GHz
+- In the 2.4 GHz band, channels must be separated by at least 5 channels to achieve non-overlapping operation.
+- North America uses channels 1, 6, and 11
