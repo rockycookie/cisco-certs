@@ -25,10 +25,12 @@
 
 ## Extended numbered IP ACL
 1. `conf t`
-2. `access-list {100-199 | 2000-2699} [permit | deny] {protocol} {source_IP + wildcard_mask} {source_port} {dest_IP + wildcard_mask} {dest_port}`
+2. `access-list {100-199 | 2000-2699} [permit | deny] {protocol} {source_IP + wildcard_mask | 'host' source_IP} {source_port} {dest_IP + wildcard_mask | 'host' + dest_IP} {dest_port}`
     - protocol: ip, tcp, udp, icmp (ping)
     - port
         - operator: `eq`, `lt`, `ne`, `gt`, `range`
+    - note:
+        - Using ip protocol with port filtering is incorrect syntax
 3. `int {intferace}`
 4. `ip access-group {100-199 | 2000-2699} [in | out]`
 
@@ -42,4 +44,4 @@
 1. `conf t`
 2. `ip access-list extended {name}`
     - this will create and move context to the access list
-3. `[permit | deny] {protocol} {source_IP + wildcard_mask} {source_port} {dest_IP + wildcard_mask} {dest_port}`
+3. `[permit | deny] {protocol} {source_IP + wildcard_mask | 'host' source_IP} {source_port} {dest_IP + wildcard_mask | 'host' + dest_IP}`
