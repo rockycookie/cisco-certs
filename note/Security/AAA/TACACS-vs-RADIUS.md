@@ -13,10 +13,13 @@
         - entire packet body encrypted by MD5 (packet header clear-text)
 - only for administrator access
 - per-command authorization and auditing
-- separates authentication, authorization, and accounting into distinct operations
+- AAA
+- Often used for device administration and more complex network access control scenarios
 
 ## RADIUS
 - normally UDP, ports 1812 and 1813
 - encryption on password only
 - end-user authentication
 - supports session-level accounting, such as connection duration or data usage, but does not track specific user commands
+- no Auditing (AA instead of AAA)
+- Commonly used for network access authentication (e.g., VPNs, Wi-Fi)
