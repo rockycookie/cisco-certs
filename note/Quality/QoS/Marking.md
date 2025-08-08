@@ -2,14 +2,26 @@
 ## How to mark
 - Classification -- the process of matching the fields in a message so that the device can take some QoS action later
 
-### Using ACL
-- Class-Based Marking with access lists is used to apply QoS markings (such as DSCP values) to traffic that has already been classified by other mechanisms
-- It does NOT perform the initial traffic classification or deep packet inspection itself
+### Header-based classification
+- Relying on existing QoS makring within the packet
+- Stateless Firewall
+    - check IP packet headers
+- Using ACL
+    - Class-Based Marking with access lists is used to apply QoS markings (such as DSCP values) to traffic that has already been classified by other mechanisms
+    - It does NOT perform the initial traffic classification or deep packet inspection itself
 
-### Using NBAR
-- Differentiating applications (like Amazon entertainment video from Cisco IP camera)
-- Deep packet inspection to recognize applications based on payload patterns
-    - more precise
+### Deep packet inspection
+- NBAR
+    - Differentiate applications 
+        - e.g. Amazon entertainment video from Cisco IP camera
+    - Deep packet inspection
+        - beyond IP and port, check the payload
+    - Protocol discovery
+    - HTTP header analysis
+
+### Others
+- Flow-based classification
+- Behavioural classification
 
 ## Where to mark
 ### IP header
