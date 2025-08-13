@@ -12,9 +12,9 @@
     - encryption mode
         - entire packet body encrypted by MD5 (packet header clear-text)
 - only for administrator access
-- per-command authorization and auditing
+- **per-command** authorization and auditing
 - AAA
-- Often used for device administration and more complex network access control scenarios
+- Often used for device administration and **more complex** network access control scenarios
 
 ## RADIUS
 - normally UDP, ports 1812 and 1813

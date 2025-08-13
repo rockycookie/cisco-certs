@@ -1,4 +1,5 @@
 # Puppet
+- Puppet DSL (Domain Specific Language)
 
 ## Stand-Alone Mode
 - Each node contains the app and its own config
