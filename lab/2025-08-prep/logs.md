@@ -1,0 +1,64 @@
+# PacketTracer Lab Work Logging
+
+## Topics
+### Configure and verify:
+- Fundamentals
+    - IPv4 addressing and subnetting ✅
+    - IPv6 addressing and prefix
+- Access
+    - VLANs spanning multiple switches
+        - Access ports (data and voice)
+        - Default VLAN
+        - InterVLAN connectivity
+    - Trunk
+        - Trunk ports
+        - 802.1Q
+        - Native VLAN
+    - Layer 2 discovery protocols
+        - Cisco Discovery Protocol (CDP)
+        - LLDP
+    - EtherChannel (LACP)
+        - Layer 2
+        - Layer 3
+- IP Connectivity
+    - IPv4 static routing
+        - Default route
+        - Network route ✅
+        - Host route
+        - Floating static
+    - IPv6 static routing
+        - Default route
+        - Network route
+        - Host route
+        - Floating static
+    - single area OSPFv2
+        - Neighbor adjacencies
+        - Point-to-point
+        - Broadcast (DR/BDR selection)
+        - Router ID
+- IP Services
+    - inside source NAT
+        - static
+        - pools
+    - NTP
+        - client mode
+        - server mode
+    - DHCP
+        - client
+        - relay
+    - SSH
+- Security
+    - device access control using local passwords
+    - ACL
+    - Layer 2 security features
+        - DHCP snooping
+        - dynamic ARP inspection
+        - port security
+    - WLAN within the GUI using WPA2 PSK
+
+### Interpret basic operations of
+- Rapid PVST+ Spanning Tree Protocol
+    - Root port, root bridge (primary/secondary), and other port names
+    - Port states (forwarding/blocking)
+    - PortFast
+    - Root guard, loop guard, BPDU filter, and BPDU guard
