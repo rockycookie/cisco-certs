@@ -11,9 +11,9 @@
         - Default VLAN 📝
         - InterVLAN connectivity ✅
     - Trunk
-        - Trunk ports
-        - 802.1Q
-        - Native VLAN
+        - Trunk ports 📝
+        - 802.1Q 📝
+        - Native VLAN 📝
     - Layer 2 discovery protocols
         - Cisco Discovery Protocol (CDP)
         - LLDP

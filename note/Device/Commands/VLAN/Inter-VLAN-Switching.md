@@ -17,5 +17,3 @@ Note, sub-interface `name_number` does not have to be the VLAN ID
     C       192.168.20.0/24 is directly connected, GigabitEthernet0/1.200
     L       192.168.20.1/32 is directly connected, GigabitEthernet0/1.200
     ```
-
-## L3 Switch
