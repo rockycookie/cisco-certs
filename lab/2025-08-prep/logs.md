@@ -15,8 +15,8 @@
         - 802.1Q 📝
         - Native VLAN 📝
     - Layer 2 discovery protocols
-        - Cisco Discovery Protocol (CDP)
-        - LLDP
+        - Cisco Discovery Protocol (CDP) ✅
+        - LLDP ✅
     - EtherChannel (LACP)
         - Layer 2
         - Layer 3
