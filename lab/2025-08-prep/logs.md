@@ -7,9 +7,9 @@
     - IPv6 addressing and prefix
 - Access
     - VLANs spanning multiple switches
-        - Access ports (data and voice)
-        - Default VLAN
-        - InterVLAN connectivity
+        - Access ports (data and voice) 📝
+        - Default VLAN 📝
+        - InterVLAN connectivity ✅
     - Trunk
         - Trunk ports
         - 802.1Q

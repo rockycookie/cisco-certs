@@ -41,6 +41,7 @@ switch(config-if)# ip address 192.0.2.1/8
 switch(config-if)# copy running-config startup-config
 ```
 Notes:
+- VLAN interface number is mapped to the VLAN number
 - `feature interface-vlan` enables VLAN interface mode
 - VLAN number limit [1, 4094]
 
