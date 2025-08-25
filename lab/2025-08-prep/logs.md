@@ -53,7 +53,7 @@
     - Layer 2 security features
         - DHCP snooping 📝
         - dynamic ARP inspection 📝
-        - port security
+        - port security 📝
     - WLAN within the GUI using WPA2 PSK
 
 ### Interpret basic operations of
