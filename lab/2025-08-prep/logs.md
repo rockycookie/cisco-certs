@@ -17,9 +17,9 @@
     - Layer 2 discovery protocols
         - Cisco Discovery Protocol (CDP) ✅
         - LLDP ✅
-    - EtherChannel (LACP)
-        - Layer 2
-        - Layer 3
+    - EtherChannel (LACP) ✅
+        - Layer 2 ✅
+        - Layer 3 📝
 - IP Connectivity
     - IPv4 static routing
         - Default route
@@ -58,7 +58,7 @@
 
 ### Interpret basic operations of
 - Rapid PVST+ Spanning Tree Protocol
-    - Root port, root bridge (primary/secondary), and other port names
-    - Port states (forwarding/blocking)
-    - PortFast
-    - Root guard, loop guard, BPDU filter, and BPDU guard
+    - Root port, root bridge (primary/secondary), and other port names ✅
+    - Port states (forwarding/blocking) ✅
+    - PortFast ✅
+    - Root guard, loop guard, BPDU filter, and BPDU guard 📝
