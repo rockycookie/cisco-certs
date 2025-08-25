@@ -52,7 +52,7 @@
     - ACL
     - Layer 2 security features
         - DHCP snooping 📝
-        - dynamic ARP inspection
+        - dynamic ARP inspection 📝
         - port security
     - WLAN within the GUI using WPA2 PSK
 
