@@ -51,7 +51,7 @@
     - device access control using local passwords
     - ACL
     - Layer 2 security features
-        - DHCP snooping
+        - DHCP snooping 📝
         - dynamic ARP inspection
         - port security
     - WLAN within the GUI using WPA2 PSK
