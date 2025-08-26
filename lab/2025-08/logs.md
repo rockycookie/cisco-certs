@@ -49,7 +49,7 @@
     - SSH
 - Security
     - device access control using local passwords
-    - ACL
+    - ACL ✅
     - Layer 2 security features
         - DHCP snooping 📝
         - dynamic ARP inspection 📝

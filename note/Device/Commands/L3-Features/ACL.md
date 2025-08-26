@@ -1,17 +1,48 @@
 # ACL
 
-## Standard Numbered/Named ACL
-- Matching source IP only
-- global command (`configure terminal`) which stays in global command
+## Show
 ```
-access-list {1-99 | 1300-1999} {permit | deny} {(host) IP | IP Wildcard-Mask | any}
+acl-router# sh ip access-lists
+
+Extended IP access list router-acl
+    10 permit tcp any host 192.168.100.100 eq 443
+    20 deny ip any any
 ```
 
-## Extended Numbered/Named ACL
+## Creation
+```
+acl-router(config)# ip access-list standard ?
+  <1-99>  Standard IP access-list number
+  WORD    Access-list name
+
+acl-router(config)# ip access-list extended ?
+  <100-199>  Extended IP access-list number
+  WORD        name
+```
+
+### Operations on an ACL
+```
+acl-router(config-ext-nacl)#?
+  <1-2147483647>  Sequence Number
+  default         Set a command to its defaults
+  deny            Specify packets to reject
+  exit            Exit from access-list configuration mode
+  no              Negate a command or set its defaults
+  permit          Specify packets to forward
+  remark          Access list entry commen
+```
+
+### Standard Numbered/Named ACL
+- Matching source IP only
+```
+acl-router(config-std-nacl)# {permit | deny} {(host) IP | IP Wildcard-Mask | any}
+```
+
+### Extended Numbered/Named ACL
 - Matching all
 - global command (`configure terminal`) which stays in global command
 ```
-access-list {100-199 | 2000-2699} {permit | deny} {tcp | udp | ip}  \
+acl-router(config-ext-nacl)# {permit | deny} {tcp | udp | ip}  \
 {(host) src_IP (src_wildcard) (src_port) | any} \
 {(host) dest_IP (dest_wildcard) (dest_port) | any}
 ```
@@ -20,22 +51,9 @@ access-list {100-199 | 2000-2699} {permit | deny} {tcp | udp | ip}  \
     - `ftp` (eq 21), `telnet` (23), `smtp` (25), `domain` (53)
     - `bootps` (67), `bootpc` (68), `tftp` (69), `www` (80), `pop3` (110), `snmp` (161)
 
-## Named ACL
-- global command (`configure terminal`) which enters to ACL subcommand
-```
-Router(config)# ip access-list {standard | extended} name
-
-Router(config-std-nacl)# {permit | deny} {(host) IP | IP Wildcard-Mask | any}
-
-Router(config-ext-nacl)# {permit | deny} {tcp | udp | ip}  \
-{(host) src_IP (src_wildcard) (src_port) | any} \
-{(host) dest_IP (dest_wildcard) (dest_port) | any}
-```
-
 ## Apply ACL to Interface
-- Interface subcommand
 ```
-ip access-group number {in | out}
+acl-router(config-if)# ip access-group <number | name> {in | out}
 ```
 
 ### Convention
