@@ -4,7 +4,7 @@
 ### Configure and verify:
 - Fundamentals
     - IPv4 addressing and subnetting ✅
-    - IPv6 addressing and prefix
+    - IPv6 addressing and prefix 📝
 - Access
     - VLANs spanning multiple switches
         - Access ports (data and voice) 📝
@@ -22,15 +22,15 @@
         - Layer 3 📝
 - IP Connectivity
     - IPv4 static routing
-        - Default route
+        - Default route 📝
         - Network route ✅
-        - Host route
-        - Floating static
+        - Host route 📝
+        - Floating static 📝
     - IPv6 static routing
-        - Default route
-        - Network route
-        - Host route
-        - Floating static
+        - Default route 📝
+        - Network route 📝
+        - Host route 📝
+        - Floating static 📝
     - single area OSPFv2
         - Neighbor adjacencies
         - Point-to-point
@@ -56,7 +56,7 @@
         - port security 📝
     - WLAN within the GUI using WPA2 PSK
 
-### Interpret basic operations of
+### Interpret basic operations of 
 - Rapid PVST+ Spanning Tree Protocol
     - Root port, root bridge (primary/secondary), and other port names ✅
     - Port states (forwarding/blocking) ✅
