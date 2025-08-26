@@ -38,7 +38,7 @@
         - Router ID ✅
 - IP Services
     - inside source NAT
-        - static
+        - static ✅
         - pools
     - NTP
         - client mode
