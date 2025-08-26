@@ -1,4 +1,4 @@
-# Single Area
+# Enable OSPF for an interface
 
 ## Option 1
 
@@ -6,7 +6,7 @@
     ```
     R1(config)# router ospf 9
     R1(config-router)# router-id 1.1.1.1
-    R1(config-router)# network 10.0.0.0 0.255.255.255 area 0
+    R1(config-router)# network 10.1.1.1 0.0.0.0 area 0
     ```
 - interface network fall within the range
     ```
@@ -20,7 +20,7 @@
     ```
     R1(config)# router ospf 9
     R1(config-router)# router-id 1.1.1.1
-    R1(config-router)# no network 10.0.0.0 0.255.255.255 area 0
+    R1(config-router)# no network 10.1.1.1 0.0.0.0 area 0
     ```
 - per-interface config
     ```

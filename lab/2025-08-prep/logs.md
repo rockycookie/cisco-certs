@@ -32,10 +32,10 @@
         - Host route 📝
         - Floating static 📝
     - single area OSPFv2
-        - Neighbor adjacencies
-        - Point-to-point
-        - Broadcast (DR/BDR selection)
-        - Router ID
+        - Neighbor adjacencies ✅
+        - Point-to-point ✅
+        - Broadcast (DR/BDR selection) ✅
+        - Router ID ✅
 - IP Services
     - inside source NAT
         - static
