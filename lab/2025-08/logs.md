@@ -39,7 +39,7 @@
 - IP Services
     - inside source NAT
         - static ✅
-        - pools
+        - pools ✅
     - NTP
         - client mode
         - server mode
