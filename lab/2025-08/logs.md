@@ -48,7 +48,7 @@
         - relay
     - SSH
 - Security
-    - device access control using local passwords
+    - device access control using local passwords 📝
     - ACL ✅
     - Layer 2 security features
         - DHCP snooping 📝
