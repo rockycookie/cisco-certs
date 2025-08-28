@@ -44,9 +44,9 @@
         - client mode
         - server mode
     - DHCP
-        - client
-        - relay
-    - SSH
+        - client 📝
+        - relay 📝
+    - SSH ✅
 - Security
     - device access control using local passwords 📝
     - ACL ✅
