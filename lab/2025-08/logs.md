@@ -41,8 +41,8 @@
         - static ✅
         - pools ✅
     - NTP
-        - client mode
-        - server mode
+        - client mode 📝
+        - server mode 📝
     - DHCP
         - client 📝
         - relay 📝
