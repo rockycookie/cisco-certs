@@ -46,6 +46,7 @@
             - random local port to remote port 179
         - also listen for a new connection from a peer router
             - listen on local port 179
+        - but one session only needs one TPC connection
     - Connect
         - reset the ConnectRetryTimer
         - send an Open message to the neighbor
