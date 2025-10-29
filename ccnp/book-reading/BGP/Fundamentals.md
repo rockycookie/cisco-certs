@@ -1,0 +1,89 @@
+# BGP
+
+## Autonomous System (AS)
+- Autonomous System (AS) is a collection of routers under a single organization’s control, using one or more IGPs and common metrics to route packets within the AS
+- Autonomous System Number (AS)
+    - ASNs were originally 16-bit
+    - Due to ASN exhaustion, RFC 4893 expanded the ASN field to 32-bit
+- private ASN blocks
+    - 64,512–65,534 in the 16-bit ASN range
+    - 4,200,000,000–4,294,967,294 in the 32-bit ASN range
+
+## Definition
+- BGP is a path vector routing protocol
+    - does not contain a complete topology of the network
+- inter-router communication
+    - inter-autonomous routing protocol
+    - listen on TCP port 179
+    - crossing network boundaries
+        - multi-hop-away adjacencies
+- BGP session
+    - the established adjacency between two BGP routers
+    - on a TCP session
+    - session types
+        - Internal BGP (iBGP)
+            - The 2 routers in the same AS or same BGP confederation
+            - Admin Distance: 200
+        - External BGP (eBGP)
+            - The 2 routers in different ASs
+            - Admin Distance: 20
+- Why BGP instead of IGP
+    - Scalability: 940,000+ IPv4 network prefixes
+    - Custom Routing: IGP always look for optimized route
+    - Maintaining path attributes
+- BGP packet types
+    - 1: OPEN
+        - Sets up and establishes BGP adjacency
+    - 2: UPDATE
+        - Advertises, updates, or withdraws routes
+    - 3: NOTIFICATION
+        - Notify error
+    - 4: KEEPALIVE
+        - Check liveness
+- BGP Neighbour States
+    - Idle
+        - try to initiate a TCP connection to the BGP peer
+            - random local port to remote port 179
+        - also listen for a new connection from a peer router
+            - listen on local port 179
+    - Connect
+        - reset the ConnectRetryTimer
+        - send an Open message to the neighbor
+        - it then changes to the OpenSent state
+    - Active
+        - recovery and retry mechanism for establishing a TCP connection with a peer router
+    - OpenSent
+        - await for an Open message from the other router
+        - check errors on both sent and received Open message
+        - send KEEPALIVE and move to OpenConfirm or send NOTIFICATION and move to Idle
+    - OpenConfirm
+        - wait for a KEEPALIVE or NOTIFICATION message
+        - move to Established upon receiving KEEPALIVE
+    - Established
+        - BGP session is established
+        - exchange routes using UPDATE messages
+
+## Path Attributes (PAs)
+- associated with each network path
+- types
+    - Well-known mandatory
+        - must be recognized by all BGP implementations
+        - must be included with every prefix advertisement
+    - Well-known discretionary
+        - must be recognized by all BGP implementations
+        - may or may not be included with a prefix advertisement
+    - Optional transitive
+        - not have to be recognized by all BGP implementations
+        - stay with the route advertisement from AS to AS
+    - Optional non-transitive
+        - not have to be recognized by all BGP implementations
+        - cannot be shared from AS to AS
+- `AS_Path`
+    - well-known mandatory
+    - includes a complete list of all the ASNs that the prefix advertisement has traversed from its source AS
+    - loop-prevention --> discard the packet if own AS on the list
+- Address Family Identifier (`AFI`)
+    - Every address family maintains a separate database and configuration for each protocol (address family + sub-address family)
+- `TTL`
+    - default 1 for eBGP packets
+    - 255 for iBGP packets
