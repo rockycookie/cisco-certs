@@ -17,6 +17,12 @@
         - Oakley provides Perfect Forward Secrecy (PFS) for keys, identity protection, and authentication
         - Skeme provides anonymity, repudiability, and quick key refreshment
 - For Cisco platforms, IKE == ISAKMP
+- procedure in general
+    1. DH to generate symmetric keys (different from the PSK)
+    2. Authenticate each other
+        - for PSK, session-specific hashes of PSK are exchanged
+    3. Agree on IPsec parameters (encryption, hash, ...)
+    4. Talk with the IPsec parameters
 
 ## IKEv1
 - two phases of key negotiation
