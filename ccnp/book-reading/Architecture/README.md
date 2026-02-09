@@ -1,0 +1,51 @@
+# Networking Architectures
+
+- Enterprise Campus
+    - focus: user connectivity
+    - layered
+        - access
+        - distribution
+        - core
+- Data Center
+    - focus: application availability & scalability
+    - characterstics:
+        - centralized servers
+        - high-density switches
+    - spine-leaf
+        - every leaf switch connects to every spine switch
+        - but spines do not connect to each other
+- Enterprise Edge
+    - focus: connect to external domains
+    - characterstics:
+        - routing and segmentation (BGP, IGP)
+        - virutalization and tunneling (e.g. VPN, VXLAN)
+        - connect to ISPs
+- ISP Edge
+    - focus: connectivity
+    - options:
+        - MPLS
+        - ISP
+        - Metro Ethernet
+        - direct cloud connections
+            - AWS Direct Connect / Azure Express Route / Google Cloud Interconnect
+- Remote Location
+
+## Campus LAN design
+- Flat Campus Design
+    - all devices connect to L2 switches
+    - no subnet, same broadcast domain --> share bandwidth
+- Hierachical (Layered) Design
+    - Access layer
+        - connect end users
+        - authntication, 802.1x auth, QoS marking, VLAN assignment, PoE
+        - Switched (L2 switches) vs Routed (L3 switches)
+    - Distribution layer
+        - enforce policies
+            - security
+            - QoS
+        - routing between VLANs
+        - STP root bridge
+        - redundancy
+    - Core layer
+        - high-speed backbone
+        - speed first, min latency
