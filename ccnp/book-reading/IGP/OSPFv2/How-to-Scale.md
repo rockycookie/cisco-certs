@@ -1,9 +1,8 @@
-# How to Scale
+# How to Scale (shrinking LSDB)
 
-- IP addressing schemes
-- area segmentation
-- addres/route summarization
-- hardware capabilities
+## Blockers/Challenges
+- Larger LSDB consumes more memory
+- Larger LSDB makes SPF slower
 
 ## Area Segmentation
 - An OSPF area is a logical group of router interfaces
@@ -22,4 +21,25 @@
     - An ABR advertises only one type 3 LSA for a prefix
 
 ## Route summarization
+- summarization occurs between areas on the ABRs
+    - normally configured as routes enter the backbone from non-backbone areas
+- requires carefully developed IP addressing scheme
+- by default, the summarization metric is the lowest from the LSAs
+- type 3 LSA gets summarized when crossing ABRs
+- type 1 LSA within the same area stays the same
+- sample command
+    - `area 12 range 172.16.0.0 255.255.0.0 cost 45`
 
+## Route Filtering
+- Summarization filtering
+    - occurs as routes enter the area on the ABR
+    - smaple: `area 12 range 172.16.2.0 255.255.255.0 not-advertise`
+- Area filtering
+    - filter when type 3 LSA generation occurs
+    - sample:
+        ```
+        ip prefix-list PREFIX-FILTER seq 5 deny 172.16.1.0/24
+        ip prefix-list PREFIX-FILTER seq 10 permit 0.0.0.0/0 le 32
+        ...
+        area 0 filter-list prefix PREFIX-FILTER in
+        ```
