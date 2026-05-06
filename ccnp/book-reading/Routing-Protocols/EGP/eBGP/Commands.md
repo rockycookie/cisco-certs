@@ -1,4 +1,11 @@
 # Commands
+Modular components:
+- BGP session parameters
+    - eg peer ASN, authentication, and keepalive timers
+- Address family init
+    - including network advertisement and summarization occur within the AF
+- Activate AF on the peer
+    - enabled by defaul for IPv4
 
 ## Initialize the BGP routing process
 ```
@@ -24,6 +31,11 @@ neighbor <ip-address> remote-as <as-number>
 ## Address family
 ```
 address-family afi safi
+```
+example with perr IP `10.12.1.1`
+```
+address-family ipv4
+neighbor 10.12.1.1 activate
 ```
 
 ## Activate
@@ -51,7 +63,7 @@ Neighbor    V   AS      MsgRcvd     MsgSent TblVer InQ OutQ     Up/Down     Stat
     - from routing table
     - into the BGP table --> **Loc-RIB**
 - before advertising a Loc-RIB entry to the peer
-    1. check NLRI is valid and next-hop address is resolvable in RIB
+    1. check NLRI (Network Layer Reachability Information (NLRI) -- the prefix length and the prefix) is valid and next-hop address is resolvable in RIB
     2. check outbound neighbor route policies
 ```
 network <network> mask <subnet-mask> [route-map <name>]
