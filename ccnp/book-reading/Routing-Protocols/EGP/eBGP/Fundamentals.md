@@ -1,32 +1,56 @@
 # BGP
 
 ## Autonomous System (AS)
-- Autonomous System (AS) is a collection of routers under a single organization’s control, using one or more IGPs and common metrics to route packets within the AS
+- Autonomous System (AS) --> **routers under a single organization’s control**
+    - using one or more IGPs and common metrics to route packets within the AS
 - Autonomous System Number (AS)
-    - ASNs were originally 16-bit
-    - Due to ASN exhaustion, RFC 4893 expanded the ASN field to 32-bit
+    - globally unique, ensured by IANA
+    - each should have
+        - a publicly allocated network range
+        - multiple connections to the Internet
+        - a unique routing policy from providers ???
+    - size
+        - originally 16-bit
+        - exhausted, thus RFC 4893 expanded it to 32-bit
 - private ASN blocks
+    - like private network, should not exchange publicly on the Internet
     - 64,512–65,534 in the 16-bit ASN range
     - 4,200,000,000–4,294,967,294 in the 32-bit ASN range
 
 ## Definition
 - BGP is a path vector routing protocol
+    - it records the entire sequence of ASs a route has traversed
+        - this ensurex loop free
     - does not contain a complete topology of the network
 - inter-router communication
-    - inter-autonomous routing protocol
+    - inter-AS routing protocol
     - listen on TCP port 179
-    - crossing network boundaries
+    - able to cross network boundaries
         - multi-hop-away adjacencies
+        - dislaike IGP, which has to respect the physical netowrk topologies
+            - where adjacencies talk to single hop only
+    - CCNP ENCOR focuses on "directly connected neighbors"
+        - uses ARP table to locate the IP address of the peer
 - BGP session
-    - the established adjacency between two BGP routers
+    - the established BGP adjacency between two routers
     - on a TCP session
     - session types
+        - Single-hop BGP session
+            - uses the ARP table to locate the IP address of the peer
+        - Multi-hop BGP session
+            - routing table
         - Internal BGP (iBGP)
-            - The 2 routers in the same AS or same BGP confederation
+            - routers: same AS or same BGP confederation
             - Admin Distance: 200
+                - OSPF (110) or EIGRP (90) should override this
+            - use cases
+                - transiant network connecting ASs from different routers
+                    - where the edge (eBGP) routers within the network need iBGP
         - External BGP (eBGP)
-            - The 2 routers in different ASs
+            - routers: different ASs
             - Admin Distance: 20
+                - "traffic should leave your netwrok as quickly and predicatably as possible"
+    - iBGP and eBGP automatically exchange routes (with exceptions)
 - Why BGP instead of IGP
     - Scalability: 940,000+ IPv4 network prefixes
     - Custom Routing: IGP always look for optimized route
@@ -66,7 +90,17 @@
 
 ## Path Attributes (PAs)
 - associated with each network path
-- types
+- `AS_Path`
+    - a complete list of all the ASNs that the prefix advertisement has traversed from its source AS
+    - the list should have no redundent ASN, otherwise it detects a loop
+- `AFI` (Address Family Identifier) or `SAFI`
+    - IPv4, IPv6, or SAFI (Subsequent Address-Family Identifier)
+    - Every address family maintains a separate database and configuration
+        - allows for different routing policy per AF
+- `TTL`
+    - default 1 for eBGP packets
+    - 255 for iBGP packets
+- levels of necessority
     - Well-known mandatory
         - must be recognized by all BGP implementations
         - must be included with every prefix advertisement
@@ -79,12 +113,3 @@
     - Optional non-transitive
         - not have to be recognized by all BGP implementations
         - cannot be shared from AS to AS
-- `AS_Path`
-    - well-known mandatory
-    - includes a complete list of all the ASNs that the prefix advertisement has traversed from its source AS
-    - loop-prevention --> discard the packet if own AS on the list
-- Address Family Identifier (`AFI`)
-    - Every address family maintains a separate database and configuration for each protocol (address family + sub-address family)
-- `TTL`
-    - default 1 for eBGP packets
-    - 255 for iBGP packets
