@@ -21,6 +21,7 @@
         - Community: Tags used for filtering or grouping routes
     - Metric: Often displays the MED or the internal IGP cost to reach the next hop
 - Scope:
+    - Each BGP process has exactly one Loc-RIB
     - Contains all route candidates it received from its BGP peers
         - the best path is marked and copied to global RIB
     - integration with the other 2
