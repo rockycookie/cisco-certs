@@ -35,7 +35,7 @@ router bgp <AS number>
     neighbor <Peer IP> distribute-list <ACL ID> in/out
 ```
 
-## Regex
+## AS_PATH Regex
 - BGP Regular Expressions (Regex) are used to match patterns in the AS-Path attribute of a BGP route
 - Instead of filtering routes by their IP addresses, Regex allows you to filter/manipulate routes based on the specific Autonomous Systems (AS) they have traveled through
 
@@ -48,6 +48,25 @@ route-map <route map NAME> permit 10
 
 router bgp 65001
     neighbor 10.0.0.2 route-map <route map NAME> in/out
+```
+
+## Community matching
+
+```
+ip community-list 100 permit 333:333
+    
+route-map COMMUNITY-CHECK deny 10
+    description Block Routes with Community 333:333 in it
+    match community 100
+route-map COMMUNITY-CHECK permit 20
+    description Allow routes with either community in it
+    set weight 111
+    set community 10:23                     // Sample 1
+    set community 3:0 3:3 10:10 additive    // Sample 2
+
+router bgp 65100
+    address-family ipv4 unicast
+    neighbor 10.12.1.2 route-map COMMUNITY-CHECK in
 ```
 
 ## Route Maps
